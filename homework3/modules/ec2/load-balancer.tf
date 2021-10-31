@@ -1,21 +1,21 @@
 resource "aws_lb" "web-nginx" {
-  name               = "nginx-alb-${aws_vpc.vpc.id}"
+  name               = "nginx-alb-${var.vpc_id}"
   internal           = false
   load_balancer_type = "application"
-  subnets            = aws_subnet.public.*.id
-  security_groups    = [aws_security_group.nginx_instances_access.id]
+  subnets            = var.public_subnet_ids
+  security_groups    = [aws_security_group.http_acces.id, aws_security_group.outbound_anywhere.id]
   access_logs {
     bucket  = data.aws_s3_bucket.main_bucket.bucket
     prefix  = "logs/web-nginx-lb"
     enabled = true
   }
   tags = {
-    "Name" = "nginx-alb-${aws_vpc.vpc.id}"
+    "Name" = "nginx-alb-${var.vpc_id}"
   }
 }
 resource "aws_lb_cookie_stickiness_policy" "cookie" {
   name                     = "cookie-policy"
-  load_balancer            = aws_elb.web-nginx.id
+  load_balancer            = aws_lb.web-nginx.id
   lb_port                  = 80
   cookie_expiration_period = 60
 }
@@ -35,7 +35,7 @@ resource "aws_lb_target_group" "web-nginx" {
   name     = "nginx-target-group"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.vpc.id
+  vpc_id   = var.vpc_id
 
   health_check {
     port                = 80
@@ -49,7 +49,7 @@ resource "aws_lb_target_group" "web-nginx" {
   }
 
   tags = {
-    "Name" = "nginx-target-group-${aws_vpc.vpc.id}"
+    "Name" = "nginx-target-group-${var.vpc_id}"
   }
 }
 
