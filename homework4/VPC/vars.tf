@@ -20,7 +20,7 @@ variable "availability_zones" {
 
 variable "route_tables_names" {
   description = "route table for each subnet"
-  default     = ["public", "private-a", "private-b"]
+  default     = ["public-a", "private-a", "private-b"]
 }
 
 
