@@ -6,7 +6,7 @@ terraform {
 
   backend "remote" {
     organization = "opsschool-yossi"
-    workspace {
+    workspaces {
       name = "EC2"
     }
 
