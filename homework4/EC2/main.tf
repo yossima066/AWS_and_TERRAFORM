@@ -2,7 +2,7 @@ data "terraform_remote_state" "vpc" {
   backend = "remote"
   config = {
     organization = "opsschool-yossi"
-    workspase = {
+    workspaces = {
       name = "VPC"
     }
   }
