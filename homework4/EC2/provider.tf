@@ -1,7 +1,7 @@
 terraform {
 
   backend "remote" {
-    organization = "mamanopsSchool"
+    organization = "opsschool-yossi"
     workspace {
       name = "EC2"
     }
