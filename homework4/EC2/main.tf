@@ -10,7 +10,7 @@ data "terraform_remote_state" "vpc" {
 
 module "Ec2" {
   #source               = "..\\..\\modules\\ec2\\"
-  source               = "app.terraform.io/mamanopsSchool/ec2/aws"
+  source               = "app.terraform.io/opsschool-yossi/ec2/aws"
   version              = "1.0.0"
   vpc_id               = data.terraform_remote_state.vpc.outputs.vpc_id
   available_zone_names = data.terraform_remote_state.vpc.outputs.available_zone_names
