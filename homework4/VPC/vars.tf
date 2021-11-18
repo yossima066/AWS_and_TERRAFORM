@@ -2,15 +2,6 @@ variable "vpc_name" {
   description = "VPC name"
   default     = "test"
 }
-variable "cidr_block" {
-  description = "Cider size"
-  default     = "10.0.0.0/16"
-}
-
-variable "vpc_name" {
-  description = "VPC name"
-  default     = "Test"
-}
 
 variable "cidr_block" {
   description = "Cider size"
