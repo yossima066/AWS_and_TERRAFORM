@@ -3,7 +3,7 @@ terraform {
   backend "remote" {
     organization = "opsschool-yossi"
     workspace {
-      name = "VPC"
+      name = "Network"
     }
 
   }
