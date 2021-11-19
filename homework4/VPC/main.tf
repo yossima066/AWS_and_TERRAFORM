@@ -1,7 +1,7 @@
 module "vpc" {
   #source             = "..\\..\\modules\\vpc\\"
   source             = "app.terraform.io/opsschool-yossi/vpc/aws"
-  version            = "1.0.0"
+  version            = "1.0.1"
   vpc_name           = var.vpc_name
   cidr_block         = var.cidr_block
   route_tables_names = var.route_tables_names
