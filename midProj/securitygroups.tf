@@ -5,7 +5,7 @@ module "nginx-sg" {
   vpc_id      = module.main_vpc.aws_vpc_id
   tags = {
     Name    = "allow_http-ssh",
-    Owner   = "Gal",
+    Owner   = "yossi",
     Purpuse = "SG for NGINX"
   }
 }
