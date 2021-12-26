@@ -9,7 +9,7 @@ module "nginx-instance-1" {
   iam_instance_profile   = module.nginx_instance_profile.profile-arn
   vpc_security_group_ids = [module.nginx-sg.aws_security_group_id]
   tags = {
-    Owner     = "Gal Segal"
+    Owner     = "yossi-maman"
     Terraform = "true"
     Purpose   = "nginx server"
     Name      = "nginx-1"
@@ -28,7 +28,7 @@ module "nginx-instance-2" {
   iam_instance_profile   = module.nginx_instance_profile.profile-arn
   vpc_security_group_ids = [module.nginx-sg.aws_security_group_id]
   tags = {
-    Owner     = "Gal Segal"
+    Owner     = "yossi-maman"
     Terraform = "true"
     Purpose   = "nginx server"
     Name      = "nginx-2"
@@ -47,7 +47,7 @@ module "db-server-1" {
   availability_zone      = "us-east-1a"
   vpc_security_group_ids = [module.nginx-sg.aws_security_group_id]
   tags = {
-    Owner     = "Gal Segal"
+    Owner     = "yossi-maman"
     Terraform = "true"
     Purpose   = "db server"
     Name      = "DB"
@@ -66,7 +66,7 @@ module "db-server-2" {
   availability_zone      = "us-east-1b"
   vpc_security_group_ids = [module.nginx-sg.aws_security_group_id]
   tags = {
-    Owner     = "Gal Segal"
+    Owner     = "yossi-maman"
     Terraform = "true"
     Purpose   = "DB server"
     Name      = "DB"
