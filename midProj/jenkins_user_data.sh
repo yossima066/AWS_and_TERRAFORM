@@ -5,3 +5,4 @@ sudo service docker start
 sudo usermod -aG docker ec2-user
 
 sudo yum -y install java-1.8.0-openjdk git
+
