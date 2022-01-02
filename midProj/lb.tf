@@ -7,7 +7,7 @@ module "lb" {
   subnets            = [module.public_subnet_1.aws_subnet_id, module.public_subnet_2.aws_subnet_id]
 
   tags = {
-    Name        = "nginx-lb"
+    Name        = "consul-lb"
     Environment = "production"
     type        = "Application"
   }
